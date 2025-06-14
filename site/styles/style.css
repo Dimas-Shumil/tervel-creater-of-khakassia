@@ -1,0 +1,224 @@
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+p {
+    text-align: center;
+    font-size: 2em;
+}
+
+.open {
+    display: flex !important;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100px;
+    background-color: #3e424bfa;
+    color: #faf6f2;
+    padding: 0 40px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 50%;
+    border: 1px solid #faf6f2;
+    width: 90px;
+    height: 90px;
+    font-style: italic;
+}
+
+.nav {
+    display: flex;
+    width: 700px;
+    padding: 0 40px;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav>ul>li>a {
+    color: #faf6f2;
+    list-style: none;
+    text-decoration: none;
+}
+
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 20px;
+}
+
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: #faf6f2;
+}
+
+.burger::before,
+.burger::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #faf6f2;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+/* добавлем класс active для анимации иконки бургер */
+.burger.active span {
+    transform: scale(0);
+}
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+/* при разрешении экрана 900px и ниже, выводим на экран иконку бургер */
+
+@media (max-width: 900px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        overflow-y: auto;
+        padding: 50px 40px;
+        background-color: grey;
+        animation: burgerAnimation 0.4s;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+    }
+
+}
+
+@keyframes burgerAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* button btn */
+.btn {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
