@@ -217,46 +217,10 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-image: url("../img/gora.jpeg");
   background-size: cover;
   position: relative;
   height: 910px;
   object-fit: contain;
-}
-
-.main_name {
-  text-align: center;
-  font-family: Gilroy;
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: Gilroy;
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
-  color: rgb(236, 236, 236);
-}
-
-#redirectButton {
-  padding: 10px 20px;
-  background-color: rgba(76, 175, 79, 0.6117647059);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-}
-
-#redirectButton:hover {
-  background-color: rgba(69, 160, 73, 0.9921568627);
 }
 
 @media (max-width: 900px) {
@@ -307,4 +271,113 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}/*# sourceMappingURL=sass.css.map */
+  width: 375;
+  height: 1171;
+}
+.page__two h1 {
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 89%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+}
+.page__two p {
+  font-family: Gilroy;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+  font-family: Gilroy;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 170%;
+  letter-spacing: 0%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.slider-container {
+  position: relative;
+  width: 202px;
+  max-width: 100%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 349px;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-controls button {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #333;
+  font-size: 24px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-controls button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
+}/*# sourceMappingURL=sass2.css.map */
