@@ -22,72 +22,67 @@ document.getElementById('buttonContainer').appendChild(button);
 
 //  слайдер
 
- document.addEventListener('DOMContentLoaded', function() {
+       // ✅ 1. Ожидаем полной загрузки DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            // ✅ 2. Проверяем, что элементы существуют
             const slider = document.querySelector('.slider');
             const slides = document.querySelectorAll('.slide');
             const prevBtn = document.querySelector('.prev-btn');
             const nextBtn = document.querySelector('.next-btn');
             const dots = document.querySelectorAll('.dot');
             
+            if (!slider || !slides.length || !prevBtn || !nextBtn || !dots.length) {
+                console.error("Один из элементов слайдера не найден!");
+                return; // Останавливаем скрипт, если что-то не загрузилось
+            }
+            
             let currentSlide = 0;
             const slideCount = slides.length;
             
-            // Инициализация слайдера
             function initSlider() {
                 updateSlider();
             }
             
-            // Переход к определенному слайду
             function goToSlide(slideIndex) {
                 currentSlide = (slideIndex + slideCount) % slideCount;
                 updateSlider();
             }
             
-            // Обновление отображения слайдера
             function updateSlider() {
-                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`; // Теперь slider точно существует
                 
-                // Обновление активной точки
                 dots.forEach((dot, index) => {
                     dot.classList.toggle('active', index === currentSlide);
                 });
             }
             
-            // Переход к следующему слайду
             function nextSlide() {
                 goToSlide(currentSlide + 1);
             }
             
-            // Переход к предыдущему слайду
             function prevSlide() {
                 goToSlide(currentSlide - 1);
             }
             
-            // Автоматическое перелистывание
+            // Автопрокрутка
             let slideInterval = setInterval(nextSlide, 5000);
             
-            // Остановка авто-перелистывания при наведении
+            // Пауза при наведении
             const sliderContainer = document.querySelector('.slider-container');
-            sliderContainer.addEventListener('mouseenter', () => {
-                clearInterval(slideInterval);
-            });
+            if (sliderContainer) {
+                sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+                sliderContainer.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+            }
             
-            sliderContainer.addEventListener('mouseleave', () => {
-                slideInterval = setInterval(nextSlide, 5000);
-            });
-            
-            // Обработчики событий для кнопок
+            // Клики по кнопкам
             nextBtn.addEventListener('click', nextSlide);
             prevBtn.addEventListener('click', prevSlide);
             
-            // Обработчики событий для точек
+            // Клики по точкам
             dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                });
+                dot.addEventListener('click', () => goToSlide(index));
             });
             
-            // Инициализация слайдера
             initSlider();
         });
 

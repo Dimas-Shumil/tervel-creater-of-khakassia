@@ -217,46 +217,89 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-image: url("../img/gora.jpeg");
   background-size: cover;
   position: relative;
   height: 910px;
   object-fit: contain;
 }
 
-.main_name {
-  text-align: center;
-  font-family: Gilroy;
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: Gilroy;
-  font-weight: 600;
-  font-size: 45px;
-  line-height: 100%;
-  letter-spacing: 0%;
-  text-align: center;
-  vertical-align: middle;
-  color: rgb(236, 236, 236);
+.page__four {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 95%;
+  height: auto;
 }
-
-#redirectButton {
-  padding: 10px 20px;
-  background-color: rgba(76, 175, 79, 0.6117647059);
+.page__four .page__four-object {
+  width: 48%;
+  height: 150px;
+  text-decoration: none;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+.page__four-object-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 150px;
+  background-image: url(../img/bdfyjdcrbt\ jpthf.jpg);
+  background-size: cover;
+  background-position: unset;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-radius: 8%;
+}
+.page__four-object-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s ease;
+}
+.page__four-object-content h3 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  text-shadow: 1px 1px 2px black;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
 }
-
-#redirectButton:hover {
-  background-color: rgba(69, 160, 73, 0.9921568627);
+.page__four-object-content p {
+  font-weight: 400;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+.page__four-object-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.page__four-object-content:hover::after {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+.page__four-object-content:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.page__four-object-content:hover p {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page__four-object-content:hover h3 {
+  margin-bottom: 10px;
+  /* Добавляем отступ между h3 и p */
 }
 
 @media (max-width: 900px) {
@@ -301,10 +344,4 @@ main {
     font-size: 45px;
   }
 }
-
-.page__two {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}/*# sourceMappingURL=sass.css.map */
+/*# sourceMappingURL=sass4.css.map */
