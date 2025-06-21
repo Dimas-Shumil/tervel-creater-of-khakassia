@@ -224,56 +224,93 @@ nav ul {
 }
 
 
-// секция 1
+
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-image: url("../img/gora.jpeg");
+
     background-size: cover;
     position: relative;
-    height: 910px;
+    height: auto;
     object-fit: contain;
 
 
+    .page__three {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: 700;
+        }
+
+        & p {
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #000;
+        }
+
+        .page__three-btns-container {
+  width: 85%;
+  height: 230px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid red; // Для визуализации контейнера
 }
 
-.main_name {
+.page__three-btns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 166px;
+  gap: 15px;
+  height: 100%;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; // Для Firefox
+  -ms-overflow-style: none; // Для IE
 
-    text-align: center;
-    font-family: Gilroy;
-    font-weight: 600;
-    font-size: 45px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
-    text-transform: uppercase;
-    font-family: Gilroy;
-    font-weight: 600;
-    font-size: 45px;
-    line-height: 100%;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
-    color: rgba(236, 236, 236, 1);
-;
+  &::-webkit-scrollbar {
+    display: none; // Для Chrome/Safari
+  }
+
+  .name-btn {
+    scroll-snap-align: start;
+    width: 166px;
+    height: 46px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: #e0e0e0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+    }
 }
 
-    #redirectButton {
-      padding: 10px 20px;
-      background-color: #4caf4f9c;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s;
-    }
-    #redirectButton:hover {
-      background-color: #45a049fd;
-    }
+
 
 @media (max-width: 900px) {
     .Header__name {
@@ -327,205 +364,13 @@ main {
     }
 }
 
-/*# sourceMappingURL=style.css.map */
-// page__two
-.page__two {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
 
 
-// Основные переменные
-$footer-bg: rgba(28, 28, 28, 1);
-$footer-text: #fff;
-$footer-link-hover: #fff;
-$footer-border: #3a4a5a;
-$accent-color: #ff6b00;
-
-// Миксины для адаптива
-@mixin mobile {
-    @media (max-width: 768px) {
-        @content;
-    }
-}
-
-.site-footer {
-    background: $footer-bg;
-    color: $footer-text;
-    padding: 40px 0 20px;
-    font-family: 'Arial', sans-serif;
-    //   border: 1px solid red;
-    width: 100%;
-
-    .footer-container {
-        display: flex;
-        justify-content: space-around;
-        // max-width: 100%;
-        margin: 0 auto;
-        padding: 0 20px;
-        flex-wrap: wrap;
-        gap: 30px;
-        // border: 1px solid red;
-
-        @include mobile {
-            flex-direction: column;
-        }
-    }
-
-    // Общие стили для колонок
-    .footer-brand,
-    .footer-nav,
-    .footer-links,
-    .footer-contacts {
-        flex: 1;
-        min-width: 38%;
-
-        h4 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        a {
-            color: rgba($footer-text, 0.7);
-            text-decoration: none;
-            transition: 0.3s;
-
-            &:hover {
-                color: $footer-link-hover;
-            }
-        }
-    }
-
-    // Лого и описание
-    .footer-brand {
-        img {
-            margin-bottom: 10px;
-        }
-
-        p {
-            opacity: 0.8;
-            font-size: 14px;
-        }
-    }
-
-    // Соцсети
-    .social-links {
-        display: flex;
-        gap: 10px;
-        margin-top: 15px;
-
-        img {
-            width: 24px;
-            height: 24px;
-        }
-    }
-
-    // Нижняя часть (копирайт и подписка)
-    .footer-bottom {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 30px auto 0;
-        padding: 0 20px;
-        border-top: 1px solid $footer-border;
-        padding-top: 20px;
-
-        @include mobile {
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .newsletter {
-            display: flex;
-            gap: 10px;
-
-            input {
-                padding: 8px 12px;
-                border: none;
-                border-radius: 4px;
-            }
-
-            button {
-                background: $accent-color;
-                color: white;
-                border: none;
-                padding: 8px 15px;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-        }
-    }
-}
-
-@media (max-width: 900px) {
-    .Header__name {
-        margin-left: 0;
-        order: 1;
-        font-size: 12px;
-        flex-grow: 1px;
-        text-align: center;
-
-    }
-
-    .logo {
-        margin-left: 0;
-        order: 0;
-    }
-
-    .burger {
-        display: flex;
-        order: 2;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 40;
-        overflow-y: auto;
-        padding: 100px 40px 40px;
-        background-color: rgba(28, 28, 28, 0.95);
-        animation: burgerAnimation 0.4s;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .li_main {
-        display: flex;
-    }
-
-    .text {
-        & h1 {
-            font-size: 45px
-        }
-    }
-}
 
 
 
 
 // footer
-
 // Основные переменные
 $footer-bg: rgba(28, 28, 28, 1);
 $footer-text: #fff;
@@ -709,5 +554,3 @@ $accent-color: #ff6b00;
         }
     }
 }
-
-/*# sourceMappingURL=style.css.map */

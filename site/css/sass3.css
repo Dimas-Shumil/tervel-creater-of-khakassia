@@ -219,89 +219,115 @@ main {
   justify-content: space-evenly;
   background-size: cover;
   position: relative;
-  height: 910px;
+  height: auto;
   object-fit: contain;
 }
-
-.page__four {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 95%;
+main .page__three {
+  width: 100%;
   height: auto;
-}
-.page__four .page__four-object {
-  width: 48%;
-  height: 150px;
-  text-decoration: none;
-  margin-bottom: 2%;
-  margin-top: 2%;
-}
-.page__four-object-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 150px;
-  background-image: url(../img/bdfyjdcrbt\ jpthf.jpg);
-  background-size: cover;
-  background-position: unset;
+}
+main .page__three h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: 700;
+}
+main .page__three p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #000;
+}
+main .page__three .page__three-btns-container {
+  width: 85%;
+  height: 230px;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  border-radius: 8%;
+  border: 1px solid red;
 }
-.page__four-object-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+main .page__three .page__three-btns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 166px;
+  gap: 15px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.3s ease;
+  padding: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-.page__four-object-content h3 {
-  font-weight: 700;
-  font-size: 1.2rem;
-  text-align: center;
-  color: white;
-  text-shadow: 1px 1px 2px black;
-  position: relative;
-  z-index: 1;
+main .page__three .page__three-btns::-webkit-scrollbar {
+  display: none;
+}
+main .page__three .page__three-btns .name-btn {
+  scroll-snap-align: start;
+  width: 166px;
+  height: 46px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
-.page__four-object-content p {
-  font-weight: 400;
-  font-size: 0.8rem;
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
+main .page__three .page__three-btns .name-btn:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.page__four-object-content:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.page__four-object-content:hover::after {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
-}
-.page__four-object-content:hover::before {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-.page__four-object-content:hover p {
-  opacity: 1;
+main .page__three .page__three-btns .name-btn:active {
   transform: translateY(0);
 }
-.page__four-object-content:hover h3 {
-  margin-bottom: 10px;
-  /* Добавляем отступ между h3 и p */
-}
 
+@media (max-width: 900px) {
+  .Header__name {
+    margin-left: 0;
+    order: 1;
+    font-size: 12px;
+    flex-grow: 1px;
+    text-align: center;
+  }
+  .logo {
+    margin-left: 0;
+    order: 0;
+  }
+  .burger {
+    display: flex;
+    order: 2;
+  }
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    overflow-y: auto;
+    padding: 100px 40px 40px;
+    background-color: rgba(28, 28, 28, 0.95);
+    animation: burgerAnimation 0.4s;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .li_main {
+    display: flex;
+  }
+  .text h1 {
+    font-size: 45px;
+  }
+}
 .site-footer {
   background: rgb(28, 28, 28);
   color: #fff;
@@ -454,5 +480,4 @@ main {
   .text h1 {
     font-size: 45px;
   }
-}
-/*# sourceMappingURL=sass4.css.map */
+}/*# sourceMappingURL=sass3.css.map */

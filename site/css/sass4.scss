@@ -282,7 +282,7 @@ main {
 
         & h3 {
             font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             text-align: center;
             color: white;
             text-shadow: 1px 1px 2px black;
@@ -293,7 +293,7 @@ main {
 
         & p {
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 0.8rem;
             text-align: center;
             color: white;
             position: relative;
@@ -328,7 +328,139 @@ main {
     }
 }
 
+// footer
 
+// Основные переменные
+$footer-bg: rgba(28, 28, 28, 1);
+$footer-text: #fff;
+$footer-link-hover: #fff;
+$footer-border: #3a4a5a;
+$accent-color: #ff6b00;
+
+// Миксины для адаптива
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+.site-footer {
+    background: $footer-bg;
+    color: $footer-text;
+    padding: 40px 0 20px;
+    font-family: 'Arial', sans-serif;
+    //   border: 1px solid red;
+    width: 100%;
+
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        // max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 30px;
+        // border: 1px solid red;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    // Общие стили для колонок
+    .footer-brand,
+    .footer-nav,
+    .footer-links,
+    .footer-contacts {
+        flex: 1;
+        min-width: 38%;
+
+        h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: rgba($footer-text, 0.7);
+            text-decoration: none;
+            transition: 0.3s;
+
+            &:hover {
+                color: $footer-link-hover;
+            }
+        }
+    }
+
+    // Лого и описание
+    .footer-brand {
+        img {
+            margin-bottom: 10px;
+        }
+
+        p {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+    }
+
+    // Соцсети
+    .social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    // Нижняя часть (копирайт и подписка)
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        padding: 0 20px;
+        border-top: 1px solid $footer-border;
+        padding-top: 20px;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter {
+            display: flex;
+            gap: 10px;
+
+            input {
+                padding: 8px 12px;
+                border: none;
+                border-radius: 4px;
+            }
+
+            button {
+                background: $accent-color;
+                color: white;
+                border: none;
+                padding: 8px 15px;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+    }
+}
 
 @media (max-width: 900px) {
     .Header__name {
