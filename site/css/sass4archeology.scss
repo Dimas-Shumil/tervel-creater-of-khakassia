@@ -135,7 +135,154 @@ nav ul {
     transform: rotate(45deg) translate(0, 50%);
 }
 
+// page__four-archeology
 
+.page__four-archeology {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    .name {
+        font-weight: 700;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 20px;
+        margin-bottom: -10px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    &-object-content {
+        width: 85%;
+        height: auto;
+        text-decoration: none;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // border: 1px solid orange;
+        background-color: #34343426;
+        border-radius: 5%;
+
+        & h3 {
+            color: #000;
+            font-weight: 400;
+            line-height: 24px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        & p {
+            text-align: justify;
+            color: #000;
+            font-size: 1.1rem;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 80%;
+        }
+
+        & img {
+            object-fit: cover;
+            width: 80%;
+            min-height: 300px;
+            margin-bottom: 15px;
+            border-radius: 5%;
+        }
+
+        .route-button-yandex {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 18px;
+            margin-bottom: 15px;
+            background-color: #2a9e1f;
+            color: white;
+            border-radius: 24px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+
+            &:hover {
+                background-color: #FFCC00;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            }
+
+            &:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        }
+
+        .route-button-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            color: inherit;
+            flex-shrink: 0;
+        }
+    }
+}
+
+
+
+@media (max-width: 900px) {
+    .Header__name {
+        margin-left: 0;
+        order: 1;
+        font-size: 12px;
+        flex-grow: 1px;
+        text-align: center;
+
+    }
+
+    .logo {
+        margin-left: 0;
+        order: 0;
+    }
+
+    .burger {
+        display: flex;
+        order: 2;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 40;
+        overflow-y: auto;
+        padding: 100px 40px 40px;
+        background-color: rgba(28, 28, 28, 0.95);
+        animation: burgerAnimation 0.4s;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .li_main {
+        display: flex;
+    }
+
+    .text {
+        & h1 {
+            font-size: 45px
+        }
+    }
+    
+}
 
 @keyframes burgerAnimation {
     from {
@@ -293,155 +440,6 @@ main {
 
 
 
-// page__four-food
-
-.page__four-food {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    .name {
-        font-weight: 700;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 20px;
-        margin-bottom: -10px;
-        flex-wrap: wrap;
-        text-align: center;
-    }
-
-    &-object-content {
-        width: 85%;
-        height: auto;
-        text-decoration: none;
-        margin-top: 2%;
-        margin-bottom: 2%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        // border: 1px solid orange;
-        background-color: #34343426;
-        border-radius: 5%;
-
-        & h3 {
-            color: #000;
-            font-weight: 400;
-            line-height: 24px;
-            font-size: 1.6rem;
-            text-align: center;
-        }
-
-        & p {
-            text-align: justify;
-            color: #000;
-            font-size: 1.1rem;
-            padding-left: 10px;
-            padding-right: 10px;
-            width: 80%;
-        }
-
-        & img {
-            object-fit: cover;
-            width: 80%;
-            min-height: 300px;
-            margin-bottom: 15px;
-            border-radius: 5%;
-        }
-
-        .route-button-yandex {
-            display: inline-flex;
-            align-items: center;
-            padding: 10px 18px;
-            margin-bottom: 15px;
-            background-color: #2a9e1f;
-            color: white;
-            border-radius: 24px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-
-            &:hover {
-                background-color: #FFCC00;
-                transform: translateY(-1px);
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
-            }
-
-            &:active {
-                transform: translateY(0);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            }
-        }
-
-        .route-button-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            color: inherit;
-            flex-shrink: 0;
-        }
-    }
-}
-
-
-
-@media (max-width: 900px) {
-    .Header__name {
-        margin-left: 0;
-        order: 1;
-        font-size: 12px;
-        flex-grow: 1px;
-        text-align: center;
-
-    }
-
-    .logo {
-        margin-left: 0;
-        order: 0;
-    }
-
-    .burger {
-        display: flex;
-        order: 2;
-    }
-
-    .nav {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        z-index: 40;
-        overflow-y: auto;
-        padding: 100px 40px 40px;
-        background-color: rgba(28, 28, 28, 0.95);
-        animation: burgerAnimation 0.4s;
-    }
-
-    .nav ul {
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-    }
-
-    .li_main {
-        display: flex;
-    }
-
-    .text {
-        & h1 {
-            font-size: 45px
-        }
-    }
-
-    
-}
 
 
 
